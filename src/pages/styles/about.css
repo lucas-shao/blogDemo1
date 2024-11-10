@@ -1,0 +1,63 @@
+.team-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.member-image {
+  transition: transform 0.3s ease;
+  border: 4px solid #f3f4f6;
+}
+
+.team-card:hover .member-image {
+  transform: scale(1.05);
+}
+
+.member-role {
+  position: relative;
+  display: inline-block;
+}
+
+.member-role::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 50%;
+  background-color: #6366f1;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .member-role::after {
+  width: 100%;
+  left: 0;
+}
+
+.description {
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.team-card:hover .description {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
